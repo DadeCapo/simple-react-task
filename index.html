@@ -4,11 +4,19 @@
 <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
 <script type="text/babel">
 const rootElement = document.getElementById('root')
-const helloWorld = <h2>Hello, React world!</h2>
+
+const helloWorld = { msg: 'Hello, React world!'}
+const goodbyeWorld = { msg: 'Goodbye Boys!'}
+const message = (props) => {
+  return <h2>{props.msg}</h2>
+};
+
 const element = (
 <div className="container">
-  {helloWorld}{helloWorld}
+  {message(helloWorld)}
+  {message(goodbyeWorld)}
 </div>
 )
+
 ReactDOM.render(element, rootElement)
 </script>
